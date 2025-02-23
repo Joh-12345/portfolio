@@ -435,29 +435,30 @@ section.Skill{
     position: relative;
 }
 
-.skill-title::after{
+.skill-title::after,
+.skill-title::before {
     content: '';
     position: absolute;
     bottom: 0;
-    right: 50%;
     width: 0px;
     height: 4px;
-    border-radius: 2px 0 0 2px;
     background-color: #F2F2F2;
-    transition: .5s;
-    
+    transition: width 0.5s ease-in-out;    
 }
 
-.skill-title::before{
-    content: '';
-    position: absolute;
-    bottom: 0;
+.skill-title::before {
     right: 50%;
-    width: 0px;
-    height: 4px;
+    border-radius: 2px 0 0 2px;
+}
+
+.skill-title::after {
+    left: 50%;
     border-radius: 0 2px 2px 0;
-    background-color: #776B5D;
-    transition: .5s;
+}
+
+.skill-title:hover::after,
+.skill-title:hover::before {
+    width: 50%; /* Expands to cover half on each side */
 }
 
 .img{
@@ -469,7 +470,7 @@ section.Skill{
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: .5s;
+    transition: transform 0.5s;
 }
 
 .img::after{
@@ -504,6 +505,9 @@ section.Skill{
     .skill-container{
         grid-template-columns: 1fr;
         padding: 2rem 50px;
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
     }
 } 
 
