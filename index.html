@@ -19,7 +19,7 @@
 
             <header>
                 <nav>
-             <!-- Navigation Bar -->
+                    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
               
             <ul class="navlist">
                 <li><a href="#home" >Home</a></li>
@@ -434,6 +434,15 @@
     
       skillBoxes.forEach(box => observer.observe(box));
     });
+</script>
+
+<!-- ToogleMenu for mobile -->
+
+<script>
+    function toggleMenu() {
+    document.querySelector(".navlist").classList.toggle("show");
+}
+
 </script>
                 
 </body>

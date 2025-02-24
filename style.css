@@ -21,13 +21,13 @@ html {
 }
 
 .Portfolio-container {
-    min-height: 100vh;
+    min-height: 100%;
     width: 100%;
     display: flex;
     padding-top: none; 
 }
-n
-header {
+
+header {    
     width: 100%;
     position: fixed;  
     top: 0;
@@ -167,6 +167,92 @@ button:nth-child(2):hover{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+@media screen and (max-width: 768px) {
+    .navlist {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #333;
+        text-align: center;
+    }
+
+    .navlist.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 2rem;
+        color: white;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+
+    .icons{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .right-container {
+        display: none; /* I-hide ang left container */
+    }
+
+    .left-container {
+        width: 100%; /* Palakihin ang right container para sakupin ang buong screen */
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        margin-left: 0rem; /* Reduce left margin */
+        text-align: center; /* Center the text */
+    }
+
+    .content .intro {
+        font-size: 1.2rem; /* Slightly smaller text */
+    }
+
+    .content h1 {
+        font-size: 2.5rem; /* Reduce heading size */
+    }
+
+    .content .detail {
+        font-size: 1rem; /* Adjust text size */
+        max-width: 100%; /* Make it flexible */
+        margin: 1rem auto 2rem auto; /* Center the content */
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .btn-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem; /* Mas maliit na pagitan */
+    }
+
+    .btn-container button {
+        width: 70%; /* Bawasan ang lapad */
+        max-width: 200px; /* Limitahan ang pinakamalaking lapad */
+        font-size: 0.9rem; /* Bawasan ang font size */
+        padding: 0.6rem 1rem; /* Mas maliit na padding */
+    }
+}
+
+
+
+
+
+
     
 /* ----------------------about--------------------- */
 
@@ -504,9 +590,8 @@ section.Skill{
 @media screen and (max-width: 650px) {
     .skill-container{
         grid-template-columns: 1fr;
-        padding: 2rem 50px;
+        padding: 1rem 20px;
         width: 100%;
-        max-width: 500px;
         margin: 0 auto;
     }
 } 
@@ -603,6 +688,32 @@ section.services .card-wrapper .card:hover h2, section.services .card-wrapper .c
     color: #FFFDEC;
 }
 
+@media screen and (max-width: 768px) {
+    .services-container {
+        padding: 3rem 1.5rem; /* Reduce padding */
+    }
+
+    section.services .card-wrapper {
+        gap:3.5rem; /* Reduce space between cards */
+    }
+
+    section.services .card-wrapper .card {
+        flex: 1 1 250px; /* Reduce card size */
+        max-width: 300px; /* Limit max width */
+        padding: 2rem 1.5rem; /* Adjust padding */
+    }
+
+    section.services .card-wrapper .card img {
+        width: 80px; /* Smaller icon size */
+        top: -2.5rem; /* Adjust position */
+    }
+
+    section.services .card-wrapper .card p {
+        padding-top: 4rem; /* Adjust text position */
+        font-size: 0.9rem; /* Smaller text */
+    }
+}
+
 
 
 /* ----------------------Contact--------------------- */
@@ -641,7 +752,6 @@ section.services .card-wrapper .card:hover h2, section.services .card-wrapper .c
     color: #fff;
     font-size: 18px;
     margin-bottom: 20px;
-
 }
 
 .iconGroup {
@@ -769,7 +879,7 @@ section.services .card-wrapper .card:hover h2, section.services .card-wrapper .c
     background: #fff;
     border: none;
     border-radius: 4px;
-    color: white;
+    color: black;
 }
 
 .right textarea {
@@ -789,4 +899,77 @@ section.services .card-wrapper .card:hover h2, section.services .card-wrapper .c
 
 .submit-button:hover {
     background-color: #E5989B;
+}
+
+@media screen and (max-width: 768px) {
+    .contact-form-container{
+        padding: 1rem;
+        text-align: center;
+    }
+    
+    .row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contactTitle h2, .contactTitle p{
+        text-align: center;
+        width: 100%;
+    }
+
+    .details {
+        text-align: left; /* Ensures the text inside stays left-aligned */
+        width: 100%; /* Ensures it doesn't get centered */
+    }
+
+    .details span:first-child,
+    .details span:last-child {
+        display: block;
+        text-align: left;
+        
+    }
+
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+        padding-bottom: 50px;
+    }
+
+    .wrapper .button {
+        height: 40px;
+        width: 40px;
+        transition: width 0.3s ease-out;
+    }
+
+    .wrapper .button .icon {
+        height: 40px;
+        width: 40px;
+        line-height: 40px;
+    }
+
+    .wrapper .button .icon i {
+        font-size: 18px;
+        line-height: 40px;
+    }
+
+    .wrapper .button:hover {
+        width: 50px;
+        width: 200px;
+    }
+
+    .contact-form-container {
+        padding-top: 50px;
+    }
+
+    .col {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+
+    .left {
+        margin-right: 0;
+    }
 }
